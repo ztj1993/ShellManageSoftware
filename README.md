@@ -25,6 +25,10 @@ Shell 软件管理工具
   - 文档服务：mindoc
   - 代理，内网穿透：frp
 
+### 项目地址
+- Github(国外)：https://github.com/ztj1993/ShellManageSoftware.git
+- Gitee(国内)：https://gitee.com/zhangtianjie/ShellManageSoftware.git
+
 ### 安装部署
 ```bash
 git clone https://github.com/ztj1993/ShellManageSoftware.git
@@ -66,13 +70,14 @@ sudo systemctl status frp.frps.default.service
 
 ### 注意事项
 - 现阶段只支持 linux_amd64 平台
-- 实际环境推荐使用 Systemd 服务
-- 请根据实际环境选择 Supervisor 服务
+- 线上环境推荐使用 Systemd 服务
+- 请根据环境选择 Supervisor 服务
   - 开发环境建议使用 Supervisor 服务并启用 Web UI 管理界面
   - Windows for ubuntu 不支持 systemd
   - Chroot for ubuntu 不支持 systemd
 - 线上环境注意修改某些会话 Key, 密钥 (切记)
 - 单软件多部署时，注意采用不同的端口，不同的会话 Key, 密钥 (切记)
+- 请注意软件所在的上级目录权限，要求权限为：755 (请注意用户主目录权限为 700)
 
 ### 主要名词解释
 - 项目(Project)：指本项目
@@ -85,6 +90,7 @@ sudo systemctl status frp.frps.default.service
   - [使用文档](Docs/使用文档.md)
   - [自定义配置](Docs/自定义配置.md)
   - [发布日志](Docs/发布日志.md)
+  - [常见问题](Docs/常见问题.md)
 - 开发相关
   - [相关词解释](Docs/名词释义.md)
   - [文件说明](Docs/文件说明.md)
