@@ -45,12 +45,12 @@ function DowmPackage_wget() {
 
 ### 解压软件
 function UnPackage_zip(){
-    sudo mkdir -p ${SoftwarePathInstall}
+    mkdir -p ${SoftwarePathInstall}
     unzip -q ${SoftwarePathPackage} -d ${SoftwarePathInstall}
     [ $? -ne 0 ] && echo ">>>>> Error: The software unzip error" && exit 1
 }
 function UnPackage_tar(){
-    sudo mkdir -p ${SoftwarePathInstall}
+    mkdir -p ${SoftwarePathInstall}
     tar -xf ${SoftwarePathPackage} --strip-components 1 -C ${SoftwarePathInstall}
     [ $? -ne 0 ] && echo ">>>>> Error: The software untar error" && exit 1
 }
