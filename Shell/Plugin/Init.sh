@@ -12,7 +12,7 @@ function BackupSoftwareConfigFile_init() {
     OriginalPath=${SoftwareConfigFile}
     TargetPath=${ProjectPathBackup}/Init
     PathAlias=Init.${AliasSoftware}.${AliasConfig}
-    source ${ProjectPathShell}/CommonShell/PathBackup.sh
+    source ${ProjectPathShell}/Common/PathBackup.sh
 }
 
 ### 生成软件配置文件
@@ -26,7 +26,7 @@ function MakeSoftwareConfigFile_init() {
     ### 生成文件
     TplContent=$(cat ${TplFile})
     TplOutFile=${SoftwareConfigFile}
-    source ${ProjectPathShell}/CommonShell/TplEngine.sh
+    source ${ProjectPathShell}/Common/TplEngine.sh
 }
 
 ### 默认初始化软件流程

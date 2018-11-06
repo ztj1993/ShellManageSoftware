@@ -12,7 +12,7 @@ function BackupSoftwareConfigFile_systemd() {
     OriginalPath=${ConfigFileSystemd}
     TargetPath=${ProjectPathBackup}/Systemd
     PathAlias=Systemd.${AliasSoftware}.${AliasConfig}
-    source ${ProjectPathShell}/CommonShell/PathBackup.sh
+    source ${ProjectPathShell}/Common/PathBackup.sh
 }
 
 ### 生成软件配置文件
@@ -26,7 +26,7 @@ function MakeSoftwareConfigFile_supervisor() {
     ### 生成文件
     TplContent=$(cat ${TplFile})
     TplOutFile=${ConfigFileSystemd}
-    source ${ProjectPathShell}/CommonShell/TplEngine.sh
+    source ${ProjectPathShell}/Common/TplEngine.sh
 }
 
 ### 默认 Systemd 流程

@@ -19,5 +19,5 @@ function BackupSoftware_default(){
         BatchCopyPaths=(${BatchCopyPaths[*]} "${ConfigFileSystemd}=>${SoftwarePathBackup}/systemd.conf")
     fi
     # 复制文件
-    source ${ProjectPathShell}/CommonShell/BatchCopy.sh
+    source ${ProjectPathShell}/Common/BatchCopy.sh
 }

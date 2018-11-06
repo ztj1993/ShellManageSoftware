@@ -27,7 +27,7 @@ ProjectPathPlugin=${ProjectPathRoot}/Plugin
 ProjectPathShell=${ProjectPathRoot}/Shell
 
 ### 引入通用脚本
-source ${ProjectPathShell}/CommonShell/Function.sh
+source ${ProjectPathShell}/Common/Function.sh
 
 ### 定义别名变量
 AliasSoftware=${1}
