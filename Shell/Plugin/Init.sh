@@ -31,6 +31,10 @@ function MakeSoftwareConfigFile_init() {
 
 ### 默认初始化软件流程
 function InitSoftware_default(){
+    # 创建用户
+    sudo groupadd -f ${SoftwareGroup}
+    id -u ${SoftwareUser} > /dev/null 2>&1
+    [ $? -ne 0 ] && sudo useradd -m -g ${SoftwareGroup} ${SoftwareUser}
     # 创建配置文件目录
     sudo mkdir -p $(dirname ${SoftwareConfigFile})
     # 创建数据目录
