@@ -35,7 +35,6 @@ Shell 软件管理工具
 ```bash
 sudo git clone https://github.com/ztj1993/ShellManageSoftware.git
 cd ShellManageSoftware
-sudo git submodule update --init --recursive
 sudo chmod +x manage.sh
 ```
 
