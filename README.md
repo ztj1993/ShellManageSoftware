@@ -30,11 +30,13 @@ Shell 软件管理工具
 - Gitee(国内)：https://gitee.com/zhangtianjie/ShellManageSoftware.git
 
 ### 安装部署
+- 请注意上级目录权限，要求权限为：755 (必须，否则软件没读取权限)
+- 测试可以考虑先执行 `sudo mkdir -p /opt && sudo chmod 755 /opt && cd /opt`
 ```bash
-git clone https://github.com/ztj1993/ShellManageSoftware.git
+sudo git clone https://github.com/ztj1993/ShellManageSoftware.git
 cd ShellManageSoftware
-git submodule update --init --recursive
-chmod +x manage.sh
+sudo git submodule update --init --recursive
+sudo chmod +x manage.sh
 ```
 
 ### 软件使用示例
