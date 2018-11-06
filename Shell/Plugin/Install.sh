@@ -62,15 +62,3 @@ function CheckInstalld_file() {
         exit 1
     fi
 }
-
-### 配置配置
-function ConfigSoftware_install(){
-    # 用户组及用户
-    sudo groupadd -f ${SoftwareGroup}
-    id -u ${SoftwareUser} > /dev/null 2>&1
-    [ $? -ne 0 ] && sudo useradd -m -g ${SoftwareGroup} ${SoftwareUser}
-    # 用户目录权限
-    sudo chown ${SoftwareUser}.${SoftwareGroup} /home/${SoftwareUser}
-    # 软件安装目录权限
-    sudo chown -R ${SoftwareUser}.${SoftwareGroup} ${SoftwarePathInstall}
-}

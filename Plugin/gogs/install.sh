@@ -18,5 +18,3 @@ DowmPackage_wget
 UnPackage_tar
 ### 验证软件安装
 CheckInstalld_file gogs
-### 配置软件
-ConfigSoftware_install

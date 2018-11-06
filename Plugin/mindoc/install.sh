@@ -18,5 +18,3 @@ DowmPackage_wget
 UnPackage_zip
 ### 验证软件安装
 CheckInstalld_file mindoc_linux_amd64
-### 配置软件
-ConfigSoftware_install

@@ -20,5 +20,3 @@ UnPackage_tar
 ### 验证软件安装
 CheckInstalld_file frps
 CheckInstalld_file frpc
-### 配置软件
-ConfigSoftware_install
