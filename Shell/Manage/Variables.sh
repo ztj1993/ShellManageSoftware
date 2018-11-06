@@ -7,6 +7,7 @@
 ###############
 
 ### 定义系统相关
+SysPlatformType=($(getPlatformType))
 SysOsType=$(cat /etc/os-release | grep "^ID=" | cut -d "=" -f 2)
 SysDateTime=`date +%Y-%m-%d-%H-%M-%S`
 
