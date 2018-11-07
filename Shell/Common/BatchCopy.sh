@@ -42,7 +42,7 @@ do
         fi
     fi
     ### 复制文件
-    sudo \cp -fR ${Path%=>*} ${Path#*=>}
+    sudo sh -c "cp -pr ${Path%=>*} ${Path#*=>}"
     if [ $? -ne 0 ]; then
         echo ">>>>> Error: copy <${Path}> error"
         exit $(($i+1))
