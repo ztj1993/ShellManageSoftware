@@ -37,13 +37,13 @@ function getStringArrayItem () {
 ###############
 function getPlatformType () {
     # ARM 处理器
-    if uname -m | grep -Eqi "armv7"; then
-        echo "arm armv7"
-        return 0
-    elif uname -m | grep -Eqi "armv8"; then
-        echo "arm64 armv8"
-        return 0
-    fi
+    case $(uname -m) in
+        armv5*) echo "armv5 arm" return 0;;
+		armv6*) echo "armv6 arm" return 0;;
+		armv7*) echo "armv7 arm" return 0;;
+		armv8*) echo "armv8 arm64" return 0;;
+		aarch64) echo "arm64";;
+	esac
     # 是否 64 位系统
     if [ $(getconf WORD_BIT) == "32" ] && [ $(getconf LONG_BIT) == "64" ]; then
         is_64bit=y
@@ -51,7 +51,7 @@ function getPlatformType () {
         is_64bit=n
     fi
     # 是否为 ARM
-    if uname -m | grep -Eqi "arm|aarch64"; then
+    if uname -m | grep -Eqi "arm"; then
         is_arm=y
     fi
     # 开始组装合适的返回码
