@@ -11,7 +11,7 @@ Group=<%=${SoftwareGroup}=%>
 WorkingDirectory=<%=${SoftwarePathInstall}=%>
 ExecStart=<%=${SoftwarePathInstall}=%>/mindoc_linux_amd64 -config=<%=${SoftwareConfigFile}=%>
 Restart=always
-Environment=USER=<%=${SoftwareUser}=%> HOME=/home/<%=${SoftwareUser}=%>
+Environment=USER=<%=${SoftwareUser}=%> HOME=<%=${SoftwareHome}=%>
 
 [Install]
 WantedBy=multi-user.target
