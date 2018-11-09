@@ -26,6 +26,7 @@ ConfigFileSystemd=/etc/systemd/system/${AliasSoftware}.${AliasConfig}.service
 ### 定义模板相关
 TplFileInitDefault=${ProjectPathRoot}/Plugin/${PathAliasSoftware}/init.tpl
 TplFileInitCustom=${ProjectPathRoot}/Custom/${AliasSoftware}.${AliasConfig}.init.tpl
+TplFileInitExtend=${ProjectPathRoot}/Custom/${AliasSoftware}.${AliasConfig}.init.extend
 TplFileSupervisorDefault=${ProjectPathRoot}/Plugin/${PathAliasSoftware}/supervisor.tpl
 TplFileSupervisorCustom=${ProjectPathRoot}/Custom/${AliasSoftware}.${AliasConfig}.supervisor.tpl
 TplFileSystemdDefault=${ProjectPathRoot}/Plugin/${PathAliasSoftware}/systemd.tpl

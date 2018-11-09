@@ -27,6 +27,8 @@ function MakeSoftwareConfigFile_init() {
     TplContent=$(cat ${TplFile})
     TplOutFile=${SoftwareConfigFile}
     source ${ProjectPathShell}/Common/TplEngine.sh
+    ### 扩展文件处理
+    [ -f ${TplFileInitExtend} ] && cat ${TplFileInitExtend} | sudo tee -a ${SoftwareConfigFile}
 }
 
 ### 默认初始化软件流程
