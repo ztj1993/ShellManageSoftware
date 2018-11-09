@@ -10,7 +10,7 @@ Group=<%=${SoftwareGroup}=%>
 WorkingDirectory=<%=${SoftwarePathInstall}=%>
 ExecStart=<%=${SoftwarePathInstall}=%>/frpc -c=<%=${SoftwareConfigFile}=%>
 Restart=always
-Environment=USER=<%=${SoftwareUser}=%> HOME=/home/<%=${SoftwareUser}=%>
+Environment=USER=<%=${SoftwareUser}=%> HOME=<%=${SoftwareHome}=%>
 
 [Install]
 WantedBy=multi-user.target

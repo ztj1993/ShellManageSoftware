@@ -13,4 +13,4 @@ stderr_logfile_maxbytes=1MB
 stderr_logfile_backups=10
 stderr_capture_maxbytes=1MB
 user = <%=${SoftwareUser}=%>
-environment = HOME="/home/<%=${SoftwareUser}=%>", USER="<%=${SoftwareUser}=%>"
+environment = HOME="<%=${SoftwareHome}=%>", USER="<%=${SoftwareUser}=%>"
