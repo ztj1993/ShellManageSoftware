@@ -31,6 +31,32 @@ function getStringArrayItem () {
 }
 
 ###############
+# Name: 获取数组第一个相同的元素
+# Params 1: <String> 字符串
+# Params 2: <Delimiter> 定界符
+# Params 3: <Index> 索引
+# author: ZhangTianJie
+# email: ztj1993@gmail.com
+###############
+function getArrayFirstIdentical () {
+    Array1=(${1})
+    Array2=(${2})
+
+    for Item1 in ${Array1[@]}
+    do
+        for Item2 in ${Array2[@]}
+        do
+            if [ ${Item1} == ${Item2} ]; then
+                echo ${Item1}
+                return 0
+            fi
+        done
+    done
+
+    return 1
+}
+
+###############
 # Name: 获取平台类型
 # author: ZhangTianJie
 # email: ztj1993@gmail.com
