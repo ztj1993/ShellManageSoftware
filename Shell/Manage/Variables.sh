@@ -19,6 +19,8 @@ ScriptFile=${ProjectPathPlugin}/${PathAliasSoftware}/${AliasCommand}.sh
 ScriptConfigFileDefault=${ProjectPathPlugin}/${AliasSoftwareMain}/default.conf
 ScriptConfigFileSubDefault=${ProjectPathPlugin}/${PathAliasSoftware}/default.conf
 ScriptConfigFileCustom=${ProjectPathCustom}/${AliasSoftware}.${AliasConfig}.conf
+ScriptBeforePlugin=${ProjectPathShell}/${AliasSoftwareMain}/Before.sh
+ScriptBeforeCustom=${ProjectPathShell}/${AliasSoftware}.${AliasConfig}.Before.sh
 
 ### 定义配置相关
 ConfigFileSupervisor=/etc/supervisor/conf.d/${AliasSoftware}.${AliasConfig}.conf

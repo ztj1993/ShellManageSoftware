@@ -26,6 +26,14 @@ fi
 [ -f ${ScriptConfigFileSubDefault} ] && [ -n ${AliasSoftwareSub} ] && source ${ScriptConfigFileSubDefault}
 [ -f ${ScriptConfigFileCustom} ] && source ${ScriptConfigFileCustom}
 
+### 引入插件公用脚本
+source ${ProjectPathShell}/Plugin/Common.sh
+source ${ProjectPathShell}/Plugin/Before.sh
+
+### 引入前置脚本
+ScriptBefore=$(getFirstExistPath ${ScriptBeforeCustom} ${ScriptBeforePlugin})
+[ -f ${ScriptBefore} ] && source ${ScriptBefore}
+
 ### 引入执行脚本
 source ${ScriptFile}
 
