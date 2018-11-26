@@ -16,7 +16,7 @@ function BackupSoftwareConfigFile_systemd() {
 }
 
 ### 生成软件配置文件
-function MakeSoftwareConfigFile_supervisor() {
+function MakeSoftwareConfigFile_systemd() {
     ### 定义模板路径
     TplFile=$(getFirstExistPath ${TplFileSystemdCustom} ${TplFileSystemdDefault})
     if [ ! -f ${TplFile} ]; then
@@ -34,7 +34,7 @@ function SystemdSoftware_default(){
     # 备份配置文件
     [ -f ${ConfigFileSystemd} ] && BackupSoftwareConfigFile_systemd
     # 生成配置文件
-    MakeSoftwareConfigFile_supervisor
+    MakeSoftwareConfigFile_systemd
     # 重新加载 systemd
     sudo systemctl daemon-reload
 }
