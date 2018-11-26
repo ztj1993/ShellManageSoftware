@@ -31,6 +31,9 @@ function MakeSoftwareConfigFile_supervisor() {
 
 ### 默认 Supervisor 流程
 function SupervisorSoftware_default(){
+    # 判断服务是否启用
+    sudo supervisorctl status > /dev/null 2>&1
+    [ $? -ne 0 ] && echo ">>>>> Warning: supervisord is not available" && return 1
     # 备份配置文件
     [ -f ${ConfigFileSupervisor} ] && BackupSoftwareConfigFile_supervisor
     # 生成配置文件
