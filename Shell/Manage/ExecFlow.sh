@@ -32,7 +32,7 @@ source ${ProjectPathShell}/Plugin/Before.sh
 
 ### 引入前置脚本
 ScriptBefore=$(getFirstExistPath ${ScriptBeforeCustom} ${ScriptBeforePlugin})
-[ -f ${ScriptBefore} ] && source ${ScriptBefore}
+[ -n "${ScriptBefore}" ] && [ -f ${ScriptBefore} ] && source ${ScriptBefore}
 
 ### 引入执行脚本
 source ${ScriptFile}
