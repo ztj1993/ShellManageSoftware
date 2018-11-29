@@ -25,7 +25,7 @@ token_size = 12
 upload_file_ext = txt|doc|docx|xls|xlsx|ppt|pptx|pdf|7z|rar|jpg|jpeg|png|gif
 upload_file_size = 10MB
 
-enable_export = <%=${SoftwareConfigs[enable_export]:=30}=%>
+enable_export = <%=${SoftwareConfigs[enable_export]:=false}=%>
 export_output_path = <%=${SoftwarePathData}=%>/runtime/cache
 
 log_path = <%=${SoftwarePathData}=%>/runtime/logs
