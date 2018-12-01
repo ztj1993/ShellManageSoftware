@@ -30,9 +30,8 @@ Shell 软件管理工具
 - Gitee(国内)：https://gitee.com/zhangtianjie/ShellManageSoftware.git
 
 ### 安装部署
-- 请注意上级目录权限，要求权限为：755 (必须，否则软件没读取权限)
-- 测试可以考虑先执行 `sudo mkdir -p /opt && sudo chmod 755 /opt && cd /opt`
-```bash
+```
+sudo mkdir -p /opt && sudo chmod 755 /opt && cd /opt
 sudo git clone https://github.com/ztj1993/ShellManageSoftware.git
 cd ShellManageSoftware
 sudo chmod +x manage.sh
@@ -42,7 +41,7 @@ sudo chmod +x manage.sh
 具体请参考：[使用文档](Docs/使用文档.md)
 
 Gogs 部署示例
-```bash
+```
 # 安装 (环境处理，下载，解压，安装 等操作)
 ./manage.sh gogs install
 # 初始化 (生成软件配置，处理软件运行环境)
@@ -56,7 +55,7 @@ sudo systemctl status gogs.default.service
 ```
 
 Frp Server 部署示例
-```bash
+```
 # 安装
 ./manage.sh frp install
 # 初始化 (注意这里只初始化了 frps)
@@ -76,8 +75,7 @@ sudo systemctl status frp.frps.default.service
   - 开发环境建议使用 Supervisor 服务并启用 Web UI 管理界面
   - Windows for ubuntu 不支持 systemd
   - Chroot for ubuntu 不支持 systemd
-- 线上环境注意修改某些会话 Key, 密钥 (切记)
-- 单软件多部署时，注意采用不同的端口，不同的会话 Key, 密钥 (切记)
+- 单软件多部署时，注意采用不同的端口
 - 请注意软件所在的上级目录权限，要求权限为：755 (请注意用户主目录权限为 700)
 
 ### 主要名词解释
