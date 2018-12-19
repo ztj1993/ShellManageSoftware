@@ -22,7 +22,10 @@ function getSoftwarePlatform() {
 function handleSoftwarePath(){
     # 判断路径的变量系统是否存在
     TmpPath="${1}"
-    TmpPath=$(echo "${TmpPath}" | sed -e "s/{Version}/${SoftwareVersion}/g")
-    TmpPath=$(echo "${TmpPath}" | sed -e "s/{Platform}/${SoftwarePlatform}/g")
+    TmpPath=$(echo "${TmpPath}" | sed -e "s!{Version}!${SoftwareVersion}!g")
+    TmpPath=$(echo "${TmpPath}" | sed -e "s!{Platform}!${SoftwarePlatform}!g")
+    TmpPath=$(echo "${TmpPath}" | sed -e "s!{UserHome}!${SoftwareUserHome}!g")
+    TmpPath=$(echo "${TmpPath}" | sed -e "s!{UserName}!${SoftwareUserName}!g")
+    TmpPath=$(echo "${TmpPath}" | sed -e "s!{UserGroup}!${SoftwareUserGroup}!g")
     echo "${TmpPath}"
 }

@@ -12,5 +12,5 @@ stderr_logfile=/var/log/supervisor/<%=${AliasSoftware}.${AliasConfig}=%>.stderr.
 stderr_logfile_maxbytes=1MB
 stderr_logfile_backups=10
 stderr_capture_maxbytes=1MB
-user = <%=${SoftwareUser}=%>
-environment = HOME="<%=${SoftwareHome}=%>", USER="<%=${SoftwareUser}=%>"
+user = <%=${SoftwareUserName}=%>
+environment = HOME="<%=${SoftwareUserHome}=%>", USER="<%=${SoftwareUserName}=%>"

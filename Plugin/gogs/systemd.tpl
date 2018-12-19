@@ -6,12 +6,12 @@ After=mariadb.service mysqld.service postgresql.service memcached.service redis.
 
 [Service]
 Type=simple
-User=<%=${SoftwareUser}=%>
-Group=<%=${SoftwareGroup}=%>
+User=<%=${SoftwareUserName}=%>
+Group=<%=${SoftwareUserGroup}=%>
 WorkingDirectory=<%=${SoftwarePathInstall}=%>
 ExecStart=<%=${SoftwarePathInstall}=%>/gogs web --config <%=${SoftwareConfigFile}=%>
 Restart=always
-Environment=USER=<%=${SoftwareUser}=%> HOME=<%=${SoftwareHome}=%>
+Environment=USER=<%=${SoftwareUserName}=%> HOME=<%=${SoftwareUserHome}=%>
 
 [Install]
 WantedBy=multi-user.target

@@ -5,12 +5,12 @@ After=network.target
 
 [Service]
 Type=simple
-User=<%=${SoftwareUser}=%>
-Group=<%=${SoftwareGroup}=%>
+User=<%=${SoftwareUserName}=%>
+Group=<%=${SoftwareUserGroup}=%>
 WorkingDirectory=<%=${SoftwarePathInstall}=%>
 ExecStart=<%=${SoftwarePathInstall}=%>/frps -c=<%=${SoftwareConfigFile}=%>
 Restart=always
-Environment=USER=<%=${SoftwareUser}=%> HOME=<%=${SoftwareHome}=%>
+Environment=USER=<%=${SoftwareUserName}=%> HOME=<%=${SoftwareUserHome}=%>
 
 [Install]
 WantedBy=multi-user.target

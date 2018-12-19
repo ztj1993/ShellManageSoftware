@@ -34,9 +34,9 @@ function MakeSoftwareConfigFile_init() {
 ### 默认初始化软件流程
 function InitSoftware_default(){
     # 创建用户
-    groupadd -f ${SoftwareGroup}
-    id -u ${SoftwareUser} > /dev/null 2>&1
-    [ $? -ne 0 ] && useradd -m -g ${SoftwareGroup} -d ${SoftwareHome} ${SoftwareUser}
+    groupadd -f ${SoftwareUserGroup}
+    id -u ${SoftwareUserName} > /dev/null 2>&1
+    [ $? -ne 0 ] && useradd -m -g ${SoftwareUserGroup} -d ${SoftwareUserHome} ${SoftwareUserName}
     # 创建配置文件目录
     mkdir -p $(dirname ${SoftwareConfigFile})
     # 创建数据目录
@@ -46,7 +46,7 @@ function InitSoftware_default(){
     # 生成配置文件
     MakeSoftwareConfigFile_init
     # 配置权限
-    chown ${SoftwareUser}.${SoftwareGroup} ${SoftwareConfigFile}
-    chown -R ${SoftwareUser}.${SoftwareGroup} ${SoftwarePathInstall}
-    chown -R ${SoftwareUser}.${SoftwareGroup} ${SoftwarePathData}
+    chown ${SoftwareUserName}.${SoftwareUserGroup} ${SoftwareConfigFile}
+    chown -R ${SoftwareUserName}.${SoftwareUserGroup} ${SoftwarePathInstall}
+    chown -R ${SoftwareUserName}.${SoftwareUserGroup} ${SoftwarePathData}
 }

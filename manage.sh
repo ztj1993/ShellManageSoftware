@@ -21,6 +21,7 @@ fi
 ProjectPathRoot=$(cd $(dirname $(readlink -f ${BASH_SOURCE[0]})) && pwd)
 ProjectPathBackup=${ProjectPathRoot}/Backup
 ProjectPathBin=${ProjectPathRoot}/Bin
+ProjectPathConfig=${ProjectPathRoot}/Config
 ProjectPathCustom=${ProjectPathRoot}/Custom
 ProjectPathPackage=${ProjectPathRoot}/Package
 ProjectPathPlugin=${ProjectPathRoot}/Plugin

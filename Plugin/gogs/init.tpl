@@ -1,5 +1,5 @@
 APP_NAME = <%=${SoftwareConfigs[APP_NAME]:=Gogs}=%>
-RUN_USER = <%=${SoftwareUser}=%>
+RUN_USER = <%=${SoftwareUserName}=%>
 RUN_MODE = prod
 
 [database]
