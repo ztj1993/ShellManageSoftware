@@ -35,7 +35,7 @@ function DowmPackage_wget() {
         rm -f ${TmpFile}
         exit 1
     fi
-    sudo mv ${TmpFile} ${SoftwarePathPackage}
+    mv ${TmpFile} ${SoftwarePathPackage}
     if [ $? -ne 0 ]; then
         echo ">>>>> Error: The software move error"
         rm -f ${TmpFile}
@@ -45,13 +45,13 @@ function DowmPackage_wget() {
 
 ### 解压软件
 function UnPackage_zip(){
-    sudo mkdir -p ${SoftwarePathInstall}
-    sudo unzip -q ${SoftwarePathPackage} -d ${SoftwarePathInstall}
+    mkdir -p ${SoftwarePathInstall}
+    unzip -q ${SoftwarePathPackage} -d ${SoftwarePathInstall}
     [ $? -ne 0 ] && echo ">>>>> Error: The software unzip error" && exit 1
 }
 function UnPackage_tar(){
-    sudo mkdir -p ${SoftwarePathInstall}
-    sudo tar -xf ${SoftwarePathPackage} --strip-components 1 -C ${SoftwarePathInstall}
+    mkdir -p ${SoftwarePathInstall}
+    tar -xf ${SoftwarePathPackage} --strip-components 1 -C ${SoftwarePathInstall}
     [ $? -ne 0 ] && echo ">>>>> Error: The software untar error" && exit 1
 }
 

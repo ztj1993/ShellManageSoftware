@@ -8,7 +8,7 @@
 
 ### 备份配置文件
 function BackupSoftwareConfigFile_supervisor() {
-    sudo mkdir -p ${ProjectPathBackup}/Supervisor
+    mkdir -p ${ProjectPathBackup}/Supervisor
     OriginalPath=${ConfigFileSupervisor}
     TargetPath=${ProjectPathBackup}/Supervisor
     PathAlias=Supervisor.${AliasSoftware}.${AliasConfig}
@@ -32,14 +32,14 @@ function MakeSoftwareConfigFile_supervisor() {
 ### 默认 Supervisor 流程
 function SupervisorSoftware_default(){
     # 判断服务是否启用
-    sudo supervisorctl status > /dev/null 2>&1
+    supervisorctl status > /dev/null 2>&1
     [ $? -ne 0 ] && echo ">>>>> Warning: supervisord is not available" && return 1
     # 备份配置文件
     [ -f ${ConfigFileSupervisor} ] && BackupSoftwareConfigFile_supervisor
     # 生成配置文件
     MakeSoftwareConfigFile_supervisor
     # 创建日志目录
-    sudo mkdir -p /var/log/supervisor
+    mkdir -p /var/log/supervisor
     # 重新加载 Supervisor
-    sudo supervisorctl reload
+    supervisorctl reload
 }

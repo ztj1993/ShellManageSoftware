@@ -8,7 +8,7 @@
 
 ### 备份配置文件
 function BackupSoftwareConfigFile_systemd() {
-    sudo mkdir -p ${ProjectPathBackup}/Systemd
+    mkdir -p ${ProjectPathBackup}/Systemd
     OriginalPath=${ConfigFileSystemd}
     TargetPath=${ProjectPathBackup}/Systemd
     PathAlias=Systemd.${AliasSoftware}.${AliasConfig}
@@ -32,12 +32,12 @@ function MakeSoftwareConfigFile_systemd() {
 ### 默认 Systemd 流程
 function SystemdSoftware_default(){
     # 判断服务是否启用
-    sudo systemctl status > /dev/null 2>&1
+    systemctl status > /dev/null 2>&1
     [ $? -ne 0 ] && echo ">>>>> Warning: systemd is not available" && return 1
     # 备份配置文件
     [ -f ${ConfigFileSystemd} ] && BackupSoftwareConfigFile_systemd
     # 生成配置文件
     MakeSoftwareConfigFile_systemd
     # 重新加载 systemd
-    sudo systemctl daemon-reload
+    systemctl daemon-reload
 }

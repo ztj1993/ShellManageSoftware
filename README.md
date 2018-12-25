@@ -31,10 +31,10 @@ Shell 软件管理工具
 
 ### 安装部署
 ```
-sudo mkdir -p /opt && sudo chmod 755 /opt && cd /opt
-sudo git clone https://github.com/ztj1993/ShellManageSoftware.git
+mkdir -p /opt && chmod 755 /opt && cd /opt
+git clone https://github.com/ztj1993/ShellManageSoftware.git
 cd ShellManageSoftware
-sudo chmod +x manage.sh
+chmod +x manage.sh
 ```
 
 ### 软件使用示例
@@ -49,9 +49,9 @@ Gogs 部署示例
 # 创建服务 (生成服务配置文件)
 ./manage.sh gogs systemd
 # 启动服务
-sudo systemctl start gogs.default.service
+systemctl start gogs.default.service
 # 查看服务状态
-sudo systemctl status gogs.default.service
+systemctl status gogs.default.service
 ```
 
 Frp Server 部署示例
@@ -63,9 +63,9 @@ Frp Server 部署示例
 # 创建服务 (生成服务配置文件)
 ./manage.sh frp.frps systemd
 # 启动服务
-sudo systemctl start frp.frps.default.service
+systemctl start frp.frps.default.service
 # 查看服务状态
-sudo systemctl status frp.frps.default.service
+systemctl status frp.frps.default.service
 ```
 
 ### 注意事项

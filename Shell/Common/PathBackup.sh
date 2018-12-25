@@ -40,10 +40,10 @@ fi
 
 ### 备份原始文件
 if [ ! -f "${TargetPath}/${PathAlias}.bak" ] && [ ! -d "${TargetPath}/${PathAlias}.bak" ]; then
-    sudo cp -fR "${OriginalPath}" "${TargetPath}/${PathAlias}.bak"
+    cp -fR "${OriginalPath}" "${TargetPath}/${PathAlias}.bak"
 fi
 
 ### 按日期备份
 DateTime=`date +%Y-%m-%d-%H-%M-%S`
-sudo cp -fR "${OriginalPath}" "${TargetPath}/${PathAlias}.bak.${DateTime}"
+cp -fR "${OriginalPath}" "${TargetPath}/${PathAlias}.bak.${DateTime}"
 [ $? -ne 0 ] && echo ">>>>> Error: backup <${OriginalPath}> error" && exit 1

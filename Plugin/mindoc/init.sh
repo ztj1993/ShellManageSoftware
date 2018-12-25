@@ -12,4 +12,4 @@ source ${ProjectPathShell}/Plugin/Init.sh
 InitSoftware_default
 ### 初始化数据库
 command="${SoftwarePathInstall}/mindoc_linux_amd64 install -config=${SoftwareConfigFile}"
-sudo su - ${SoftwareUser} -c "${command}"
+su - ${SoftwareUser} -c "${command}"

@@ -56,4 +56,4 @@ TplContent=$(echo "${TplContent}" | sed -e 's/<{=\|=}>\|<%=\|=%>//g')
 ### 执行字符串
 TplContent=$(eval "${TplContent}")
 
-[ "${TplOutFile}" != "" ] && echo "${TplContent}" | sudo tee ${TplOutFile}
+[ "${TplOutFile}" != "" ] && echo "${TplContent}" | tee ${TplOutFile}

@@ -8,7 +8,7 @@
 
 ### 备份软件配置文件
 function BackupSoftwareConfigFile_init() {
-    sudo mkdir -p ${ProjectPathBackup}/Init
+    mkdir -p ${ProjectPathBackup}/Init
     OriginalPath=${SoftwareConfigFile}
     TargetPath=${ProjectPathBackup}/Init
     PathAlias=Init.${AliasSoftware}.${AliasConfig}
@@ -28,25 +28,25 @@ function MakeSoftwareConfigFile_init() {
     TplOutFile=${SoftwareConfigFile}
     source ${ProjectPathShell}/Common/TplEngine.sh
     ### 扩展文件处理
-    [ -f ${TplFileInitExtend} ] && cat ${TplFileInitExtend} | sudo tee -a ${SoftwareConfigFile}
+    [ -f ${TplFileInitExtend} ] && cat ${TplFileInitExtend} | tee -a ${SoftwareConfigFile}
 }
 
 ### 默认初始化软件流程
 function InitSoftware_default(){
     # 创建用户
-    sudo groupadd -f ${SoftwareGroup}
+    groupadd -f ${SoftwareGroup}
     id -u ${SoftwareUser} > /dev/null 2>&1
-    [ $? -ne 0 ] && sudo useradd -m -g ${SoftwareGroup} -d ${SoftwareHome} ${SoftwareUser}
+    [ $? -ne 0 ] && useradd -m -g ${SoftwareGroup} -d ${SoftwareHome} ${SoftwareUser}
     # 创建配置文件目录
-    sudo mkdir -p $(dirname ${SoftwareConfigFile})
+    mkdir -p $(dirname ${SoftwareConfigFile})
     # 创建数据目录
-    sudo mkdir -p ${SoftwarePathData}
+    mkdir -p ${SoftwarePathData}
     # 备份已经配置过的配置文件
     [ -f ${SoftwareConfigFile} ] && BackupSoftwareConfigFile_init
     # 生成配置文件
     MakeSoftwareConfigFile_init
     # 配置权限
-    sudo chown ${SoftwareUser}.${SoftwareGroup} ${SoftwareConfigFile}
-    sudo chown -R ${SoftwareUser}.${SoftwareGroup} ${SoftwarePathInstall}
-    sudo chown -R ${SoftwareUser}.${SoftwareGroup} ${SoftwarePathData}
+    chown ${SoftwareUser}.${SoftwareGroup} ${SoftwareConfigFile}
+    chown -R ${SoftwareUser}.${SoftwareGroup} ${SoftwarePathInstall}
+    chown -R ${SoftwareUser}.${SoftwareGroup} ${SoftwarePathData}
 }
