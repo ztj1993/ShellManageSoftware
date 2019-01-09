@@ -55,6 +55,13 @@ function UnPackage_tar(){
     [ $? -ne 0 ] && echo ">>>>> Error: The software untar error" && exit 1
 }
 
+### 复制文件
+function Package_copy(){
+    mkdir -p ${SoftwarePathInstall}
+    cp ${SoftwarePathPackage} ${SoftwarePathInstall}/${1}
+    [ $? -ne 0 ] && echo ">>>>> Error: The software copy error" && exit 1
+}
+
 ### 验证软件安装
 function CheckInstalld_file() {
     if [ ! -f ${SoftwarePathInstall}/${1} ]; then
