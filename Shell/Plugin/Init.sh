@@ -68,4 +68,5 @@ function InitSoftware_default(){
     chown ${SoftwareUserName}.${SoftwareUserGroup} ${SoftwareConfigFile}
     chown -R ${SoftwareUserName}.${SoftwareUserGroup} ${SoftwarePathInstall}
     chown -R ${SoftwareUserName}.${SoftwareUserGroup} ${SoftwarePathData}
+    chmod -R 755 ${SoftwarePathInstall}
 }
