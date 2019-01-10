@@ -69,7 +69,6 @@ systemctl status frp.frps.default.service
 ```
 
 ### 注意事项
-- 现阶段只支持 linux_amd64 平台
 - 线上环境推荐使用 Systemd 服务
 - 请根据环境选择 Supervisor 服务
   - 开发环境建议使用 Supervisor 服务并启用 Web UI 管理界面
