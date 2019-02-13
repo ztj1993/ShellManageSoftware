@@ -24,4 +24,5 @@ fi
 SoftwareUrl=$(handleSoftwarePath ${SoftwareUrl})
 SoftwarePathPackage=$(handleSoftwarePath ${SoftwarePathPackage})
 SoftwareConfigFile=$(handleSoftwarePath ${SoftwareConfigFile})
+SoftwarePathInstall=$(handleSoftwarePath ${SoftwarePathInstall})
 SoftwarePathData=$(handleSoftwarePath ${SoftwarePathData})
