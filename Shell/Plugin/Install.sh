@@ -51,7 +51,7 @@ function UnPackage_zip(){
 }
 function UnPackage_tar(){
     mkdir -p ${SoftwarePathInstall}
-    tar -xf ${SoftwarePathPackage} --strip-components 1 -C ${SoftwarePathInstall}
+    tar -xf ${SoftwarePathPackage} --strip-components ${1:-1} -C ${SoftwarePathInstall}
     [ $? -ne 0 ] && echo ">>>>> Error: The software untar error" && exit 1
 }
 
